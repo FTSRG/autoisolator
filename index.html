@@ -76,7 +76,7 @@
             <div class="header-content-inner">
                 <h1 id="homeHeading">One-Click Dynamic Analysis Of Your Arbitrary C# Code</h1>
                 <hr>
-                <p>It does not matter if the method you analyze has external dependencies, AutoIsolator takes care of them and utilizes Microsoft IntelliTest to illustrate dynamic behavior.</p>
+                <p>AutoIsolator helps you in understanding the behavior of your code, by automatically analyzing its dynamic behavior. The tool is capable of identifying each input in the unit of analysis, including the external method calls as well.</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
             </div>
         </div>
@@ -88,8 +88,8 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Dynamic analysis with fully isolated units</h2>
                     <hr class="light">
-                    <p class="text-faded">It is a common requirement from developers to see dynamic behavior of their code. This can be achieved via running the software under development or writing unit tests. However, there are several scenarios, when these actions cannot be performed (e.g., no time available, too many dependencies in the unit, the code is too complex to execute in short time). In these cases, AutoIsolator arises as it is able to provide values for your code under development with a single click. You must only define the scope of the analysis, and <strong>AutoIsolator will take care of every dependency automatically</strong>, no matter if it is a database query, a network call or even an invocation to an unfinished implementation. By executing the analysis, AutoIsolator utilizes Microsoft's IntelliTest to provide values for the dynamic behavior in your code.</p>
-                    <a href="#approach" class="page-scroll btn btn-default btn-xl sr-button">See the details!</a>
+                    <p class="text-faded">Program comprehension is a key aspect of software development and evolution. However, understanding large, complex methods can be cumbersome due to external dependencies. In these cases AutoIsolator can help to alleviate this process by automatically isolating the code in the unit of analysis. The tool utilizes Microsoft IntelliTest to provide concrete values for each input of the unit (including the parameters, the return values of external invocations and properties, and the state changing side effects effects of these external calls as well). In the end, AutoIsolator shows these generated values for the user using an easily readable format in the code editor.</p>
+                    <a href="#approach" class="page-scroll btn btn-default btn-xl sr-button">See the details</a>
                 </div>
             </div>
         </div>
@@ -110,28 +110,28 @@
                     <div class="service-box">
                         <i class="fa fa-4x fa-cubes text-primary sr-icons"></i>
                         <h3>Definition of Units</h3>
-                        <p class="text-muted">The first step is to define the unit where the analysis will be performed. Anything found outside this scope will be handled as external, and will be isolated automatically from the unit.</p>
+                        <p class="text-muted">In the first step, the user defines the unit where the analysis will be performed. Anything found outside this scope will be handled as external, and will be isolated automatically from the unit.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-random text-primary sr-icons"></i>
                         <h3>Code Transformation</h3>
-                        <p class="text-muted">AutoIsolator automatically replaces the invocations and types in the code that are defined outside of the unit being analyzed. Due to this approach, our tool avoids the issues mocking frameworks regularly face (unmockable code).</p>
+                        <p class="text-muted">In the background, AutoIsolator automatically replaces the invocations and types in the code that are defined outside of the unit being analyzed. With the help of this approach, our tool avoids the issues mocking frameworks regularly face (unmockable code).</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-square-o text-primary sr-icons"></i>
                         <h3>Sandbox Generation</h3>
-                        <p class="text-muted">The tool automatically generates a parameterized sandbox around your unit under test for each external invocation and type use. This way, AutoIsolator enables Microsoft's IntelliTest to provide values for your code that show dynamic behavior.</p>
+                        <p class="text-muted">AutoIsolator automatically generates a parameterized sandbox around the analyzed unit that remains hidden from the user. Microsoft's IntelliTest generates values for your code by filling the parameters of this sandbox.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-search text-primary sr-icons"></i>
                         <h3>Dynamic Analysis</h3>
-                        <p class="text-muted">The transformed code of the unit and the generated sandbox is compiled runtime via Roslyn and emitted into a DLL. This library is analyzed by Microsoft IntelliTest and tests are generated for the method under analysis. The generated values are fed back to Visual Studio's editor.</p>
+                        <p class="text-muted">The transformed code of the unit and the generated sandbox is compiled runtime via Roslyn and emitted into a DLL, which is analyzed by IntelliTest. Until this point, the steps wwere transparent to the user. In the end, AutoIsolator presents the values generated by IntelliTest in Visual Studio's code editor.</p>
                     </div>
                 </div>
             </div>
